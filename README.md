@@ -1,13 +1,19 @@
 # What's this
 A program that will automatically sign up.
 
+main_moniter.py is the main python file that responses for the main logics to sign up.
+
+timeset.py is a crontab support python file, used to flush the crontab recording, to make sure everyone who access my miniprogram and fill the form can be included in crontab.
+
+testapp1.js is a Nodejs script, creating a server process to receive the information from miniprogram and put them into mysql database.
+
 Due to politics and rules, required by university, students should report their health situation every single day.
 
 I think that is meaningless, unhelpful, troublesome.
 
 Convenience should be make in order to study. First prime should be scholor, not rules.
 
-So I make this in my first year in university, when I have been arrived at the university for two months.That is in Nov., 2020.
+So I make this in my first year in university, when I have been arrived at the university for two months.That is in Nov. 2020.
 
 # How to use it
 
@@ -27,10 +33,16 @@ You can also access my miniprogram named "测试获取code" in Wechat.Search it 
 Fill the form with your username, password, nickname, sign timing and area. My server will help you sign up in your setting time.
 
 # 这是什么
-这是一个武理自动打卡健康填报的程序
+这是一个武理自动打卡健康填报的程序，其中
+main_moniter.py是python主程序，用来负责主要打卡逻辑
+
+timeset.py是linux上设置crontab的python程序，由于我的服务器连接了小程序，可以定期运行timeset.py，负责将新加入的自动打卡人从数据库中提取，并放入crontab中自动打卡
+
+testapp1.js是nodejs写的一个服务器端，用于接收处理小程序前端传输的数据和信息
 # 如何使用
 ## 直接使用
 <code>python ./main_moniter.py username password name area </code>
+
 ## linux上使用crontab实现自动化
 <code>crontab -e</code>
 <code>4 10 * * * python ./main_moniter.py username password name area </code>
