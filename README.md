@@ -24,6 +24,7 @@ Just running the python script on your Linux server by
 Crontab is useful.
 
 <code>crontab -e</code>
+
 <code>4 10 * * * python ./main_moniter.py username password name area </code>
 
 You can also access my miniprogram named "测试获取code" in Wechat.Search it by name in Wechat, and you can see it.
